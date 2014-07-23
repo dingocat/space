@@ -145,37 +145,54 @@ textarea {
 }
 #robot2 {
     top: 300px;
-    right: 380px;
+    left: 900px;
 }
 #robot2 img{
     -webkit-transition: -webkit-transform 3s;
     transition: transform 3s;
 }
 #robot3 {
-    top: 200px;
-    right: 480px;
+    top: 180px;
+    left: 620px;
 }
 #robot3 img {
     height: 40%;
     width: 40%;
-    opacity: 0;
-    -webkit-transition: opacity 2s, width 2s, height 2s;
-    transition: opacity 2s, width 2s, height 2s;
+    z-index: 5;
 }
-#robot3 img:hover {
+#robot3 img:after {
+    background-image: url(/img/blast.png);
+    opacity: 1;
+    width: 20%;
+    height: 20%;
+    z-index: 10;
+    left: 620px;
+    -webkit-transition: left 1s, opacity 2s, width 3s, height 3s;
+    transition: left 1s, opacity 2s, width 3s, height 3s;
+}
+#robot3 img:hover:after {
+    z-index: 11;
     height: 60%;
     width: 60%;
     opacity: 1;
+    left: 800px;
 }
 #rocket1 {
     top: 500px;
-    right: 380px;
-    -webkit-transition: right 3s, top 4s;
-    transition: right 3s, top 4s;
+    left: 920px;
+    opacity: 1;
+    -webkit-transition: left 3s, top 4s, opacity 5s;
+    transition: left 3s, top 4s, opacity 5s;
 }
 #rocket1:active {
-    right: -250px;
+    left: 1500px;
     top: 400px;
+    opacity: 0;
+}
+.rockethover {
+    left: 1500px;
+    top: 400px;
+    opacity: 0;
 }
 #rocket1 img {
     height: 71px;
@@ -190,32 +207,38 @@ textarea {
     cursor:url(http://cur.cursors-4u.net/mechanics/mec-1/mec5.cur), progress !important;
 }
 #ufo1 {
-    top: 750px;
-    right: 400px;
+    top: 650px;
+    left: 1100px;
     opacity: 1;
-    height: 40%;
-    width: 40%;
-    -webkit-transition: top 3s, opacity 4s, width 3s, height 3s;
-    transition: top 3s, opacity 4s, width 3s, height 3s;
 }
 #ufo1 img {
-    
+    height: 170px;
+    width: 260px;
 }
-#ufo1 img:hover {
-    top: 700px;
-    opacity: 0;
-    height: 100%;
-    width: 100%;
+#ufo1 img:checked {
+  -webkit-animation: rocketLaunch 4s 1 1.3s ease-in-out forwards;
+
 }
 #ufo2 {
-
+    top: 50px;
+    left: 50px;
 }
 #ufo3{
-
+    top: 20px;
+    left: 1000px;
+}
+#ufo3 img {
+    height: 200px;
+    width: 342px;
 }
 #rocket3 {
-
+    top: 500px;
+    left: 150px;
 }
+#rocket3 img{
+    height: 300px;
+    width: 513px;
+    }
 .shakeimage {
 position:relative
 }
@@ -225,13 +248,14 @@ position:relative
     interactives get put in as divs later
     top layer is mid interactives that don't interact
  */
-
-
-
-
-
-
-
+@-webkit-keyframes rocketLaunch {
+    20%,
+    40% { right: 20%; }
+    60% { right: 45%; }
+    80% { right: 60%; }
+    90% { right: 70%; }
+    100% { right: 80%; }
+}
 
 
 
