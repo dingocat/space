@@ -176,7 +176,7 @@ textarea {
     -webkit-transition: left 3s, top 4s, opacity 5s;
     transition: left 3s, top 4s, opacity 5s;
 }
-#rocket1:active {
+.rocket1Active {
     left: 1500px;
     top: 500px;
     opacity: 0;
