@@ -1,0 +1,11 @@
+$(document).ready(function () {
+$(document).on('click', '.block-add', function () {
+	var a = $(this);
+	var src = a.find('img:first').attr('src');
+	var elem = $('<div class="container'><img src="" + src + "" class="blocks" /></div>);
+	$('.block').append(elem);
+	elem.draggable();
+	elem.find('.blocks:first').resizable();
+	return false;
+});
+});
